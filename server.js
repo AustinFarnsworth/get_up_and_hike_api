@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 5001;
 
 // Get all blog posts
 app.get("/posts", async (req, res) => {
-  const blogPosts = await db.query("SELECT * FROM blog_post");
+  const blogPosts = await db.query("SELECT * FROM blog_posts");
   res.status(200).json({
     blogPosts: blogPosts.rows.length,
     data: {
@@ -106,6 +106,15 @@ app.delete("/posts/:id", async (req, res) => {
 
 // ~~~~~~~~~~~~~~~~~ USER ROUTES ~~~~~~~~~~~~~~~~~~~~
 
+app.get("/users", async (req, res) => {
+  const results = await db.query("SELECT * FROM users", [req.body.users_id]);
+  res.status(200).json({
+    results: results.rows.length,
+    data: {
+      users: results.rows,
+    },
+  });
+});
 // Create User register
 app.post("/posts/register", async (req, res) => {
   try {
