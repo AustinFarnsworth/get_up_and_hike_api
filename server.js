@@ -18,19 +18,23 @@ if (process.env.NODE_ENV === "production") {
   console.log("production mode");
 }
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 3001;
 
 // ~~~~~~~~~~~~~~~~ POST ROUTES ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Get all blog posts
 app.get("/posts", async (req, res) => {
-  const blogPosts = await db.query("SELECT * FROM blog_posts");
-  res.status(200).json({
-    blogPosts: blogPosts.rows.length,
-    data: {
-      posts: blogPosts.rows,
-    },
-  });
+  try {
+    const blogPosts = await db.query("SELECT * FROM blog_post");
+    res.status(200).json({
+      blogPosts: blogPosts.rows.length,
+      data: {
+        posts: blogPosts.rows,
+      },
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 // Get a single blog post
@@ -107,7 +111,7 @@ app.delete("/posts/:id", async (req, res) => {
 // ~~~~~~~~~~~~~~~~~ USER ROUTES ~~~~~~~~~~~~~~~~~~~~
 
 app.get("/users", async (req, res) => {
-  const results = await db.query("SELECT * FROM users", [req.body.users_id]);
+  const results = await db.query("SELECT * FROM users");
   res.status(200).json({
     results: results.rows.length,
     data: {
