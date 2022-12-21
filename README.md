@@ -6,10 +6,6 @@ Get Up And Hike is a full stack app built in the PERN stack by its creator Austi
 
 This project is a blog website catered towards hikers and lovers of the outdoors to share and express their passion of nature. Users can create an account, login and create a blog post and edit or delete posts. Community features such as commenting on posts and sharing posts with others are currently in development.
 
-## Screenshots
-
-![Homepage](/public/images/homepage.png "Get Up and Hike homepage")
-
 ## Links
 
 Demo of app here - (https://www.youtube.com/watch?v=ypecU6BcvpE&t=1s) Frontend repo here - (https://github.com/AustinFarnsworth/get-up-and-hike)
