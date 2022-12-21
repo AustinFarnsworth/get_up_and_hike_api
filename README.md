@@ -16,14 +16,6 @@ Demo of app here - (https://www.youtube.com/watch?v=ypecU6BcvpE&t=1s) Frontend r
 
 Refer to https://nodejs.org/en/ to install nodejs
 
-**Install create-react-app**
-
-Install create-react-app npm package globally. This will help to easily run the project and also build the source files easily. Use the following command to install create-react-app
-
-```bash
-  npm install -g create-react-app
-```
-
 ## Cloning and Running in Local
 
 Clone the project into local
