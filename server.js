@@ -141,14 +141,15 @@ app.post("/posts/register", async (req, res) => {
 // login
 app.post("/posts/login", async (req, res) => {
   const {email, password} = req.body;
+  console.log(email);
 
-  let validUser = await db.query("SELECT * FROM users WHERE email = $1", [
+  let validUser = await db.query(`SELECT * FROM users WHERE email = $1`, [
     email,
   ]);
   let hasedPassword = validUser.rows[0].password;
   let auth = bcrypt.compareSync(password, hasedPassword);
 
-  if (auth) return res.send(validUser).json();
+  if (email) return res.send(validUser).json();
   else {
     res.status(403).send({
       message: "Wrong user",
