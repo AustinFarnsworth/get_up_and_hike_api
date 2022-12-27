@@ -45,7 +45,7 @@ app.get("/posts/:id", async (req, res) => {
 });
 
 // Create blog post
-app.post("/posts/create", async (req, res) => {
+app.post("/posts", async (req, res) => {
   console.log(req.body);
 
   try {
