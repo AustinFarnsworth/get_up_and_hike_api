@@ -7,6 +7,7 @@ require("dotenv").config();
 
 // -- heroku login for database
 // -- heroku pg:psql -a get-up-and-hike
+// database changed from railway to psql
 
 const devConfig = {
   user: process.env.PGUSER,
