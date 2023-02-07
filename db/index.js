@@ -17,6 +17,8 @@ const devConfig = {
   port: process.env.PGPORT,
 };
 
+console.log(process.env.PGDATABASE);
+
 const productionConfig = {
   // database url will be coming from heroku add ons
   connectionString: process.env.DATABASE_URL,
