@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
   console.log("production mode");
 }
 
-const PORT = `0.0.0.0:${PORT}` || 3001;
+const PORT = process.env.PORT || 3001;
 
 // ~~~~~~~~~~~~~~~~ POST ROUTES ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
