@@ -6,7 +6,7 @@ const {Pool} = require("pg");
 require("dotenv").config();
 
 // -- heroku pg:psql -a get-up-and-hike
-// database changed from railway to psql
+// database changed back to railway
 
 const devConfig = {
   user: process.env.PGUSER,
